@@ -138,6 +138,30 @@
                 </a>
                 @if(! empty($allQuestions)) @dump($allQuestions['stringCompressionAlgorithm']) @endif
             </li>
+
+            <li>
+                20. Schedule a task to send email every hour
+
+                <p>Set envirment variables</p>
+
+                
+                    <code> MAIL_MAILER= </code> <br>
+                    <code> MAIL_HOST= </code> <br>
+                    <code> MAIL_PORT= </code> <br>
+                    <code> MAIL_USERNAME= </code> <br>
+                    <code> MAIL_PASSWORD= </code> <br>
+                    <code> MAIL_ENCRYPTION= </code> <br>
+
+                <code>
+                    QUEUE_CONNECTION=database
+                </code>
+
+                <p>then run commands</p>
+
+                <code>php artisan queue:work</code> <br>
+                <code>php artisan schedule:work</code>
+
+            </li>
         </ul>
     </details>
 </body>
