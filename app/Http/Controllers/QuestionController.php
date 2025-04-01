@@ -8,8 +8,8 @@ class QuestionController extends Controller
 {
     public function index()
     {
-        if (request()->query('question') == 'reverseString') {
-            dump($this->reverseString());
+        if (! empty(request()->query('question'))) {
+            dump($this->{request()->query('question')}());
         }
 
         return view('question.list');
@@ -29,6 +29,28 @@ class QuestionController extends Controller
         return [
             'original' => $string,
             'reversed' => implode('', $reversedString),
+        ];
+    }
+
+    /**
+     * Find missing number in array
+     */
+    public static function findMissingNumber()
+    {
+        $arr = [1, 2, 3, 4, 5, 7, 8, 9, 10];
+
+        $missingNumber = null;
+
+        for ($i = 1; $i <= count($arr); $i++) {
+            if (!in_array($i, $arr)) {
+                $missingNumber = $i;
+                break;
+            }
+        }
+
+        return [
+            'original' => $arr,
+            'missing' => $missingNumber,
         ];
     }
 }

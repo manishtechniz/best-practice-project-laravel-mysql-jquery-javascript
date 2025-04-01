@@ -10,6 +10,7 @@
     <p>Click on the question to view the answer.</p>
     <ul>
         <li><a href="{{ route('question', ['question' => 'reverseString']) }}" > 1. Reverse String </a></li>
+        <li><a href="{{ route('question', ['question' => 'findMissingNumber']) }}" > 3. Find missing number from nth array </a></li>
     </ul>
 </body>
 </html>
