@@ -51,6 +51,15 @@
                     'question' => 'reverseString',
                     'label' => 'Reverse String',
                 ], [
+                    'sort' => '2',
+                    'question' => null,
+                    'label' => 'Create a Laravel middleware that logs every incoming request URL and method',
+                    'closure' => function() {
+                        return '
+                            <p>Please check incoming request <code>logs/laravel.log</code> file </p>
+                        ';
+                    }
+                ], [
                     'sort' => '3',
                     'question' => 'findMissingNumber',
                     'label' => 'Find missing number from nth array',
@@ -91,6 +100,13 @@
                                 Table::select(col1, col2,....)->get();
                             </code>
                         </p>';
+                    }
+                ], [
+                    'sort' => '9',
+                    'question' => null,
+                    'label' => 'Write a Job to insert thousands of records in a table using batch',
+                    'closure' => function() {
+                        return '<a href="'. route("user_batch") .'"> Create Batch Job for user table</a>';
                     }
                 ], [
                     'sort' => '10',
@@ -143,9 +159,6 @@
                         </p>
                         
                         <p> Please update permission for apply this functionality </p>
-
-                        <p> <i> NOTE:: This functionality add on questions not for routes </i></p>
-                        
                         ';
                     }
                 ], [

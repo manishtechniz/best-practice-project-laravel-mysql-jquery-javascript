@@ -5,6 +5,7 @@ use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use App\Http\Middleware\BasicRateLimiter;
 use App\Http\Middleware\UserLoginAuto;
+use App\Http\Middleware\LogIncomingRequest;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -21,6 +22,7 @@ return Application::configure(basePath: dirname(__DIR__))
         // Add global middleware
         $middleware->append([
             UserLoginAuto::class,
+            LogIncomingRequest::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
