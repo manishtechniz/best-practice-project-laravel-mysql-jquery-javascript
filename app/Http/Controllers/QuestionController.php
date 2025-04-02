@@ -9,8 +9,13 @@ class QuestionController extends Controller
     public function index()
     {
         if (! empty(request()->query('question'))) {
-            dump($this->{request()->query('question')}());
-            return view('question.list');
+            if (auth()->user()->can(request()->query('permission'))) {
+                dump($this->{request()->query('question')}());
+
+                return view('question.list');   
+            }
+
+            abort(403, 'Unauthorized action.');
         }
 
         $allQuestions = [
