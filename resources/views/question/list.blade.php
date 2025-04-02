@@ -119,6 +119,13 @@
             </li>
 
             <li>
+                15. Implement a Basic Rate Limiter
+                <p>
+                    I set rate limit 1 request per second. If you want check please press <code> f5 </code> very fast and rapidly.
+                </p>
+            </li>
+
+            <li>
                 <a href="{{ route('question', ['question' => 'reverseWordsInSentence']) }}" > 
                     16. Reverse Words in a Sentence Without Using explode
                 </a>
@@ -144,7 +151,6 @@
 
                 <p>Set envirment variables</p>
 
-                
                     <code> MAIL_MAILER= </code> <br>
                     <code> MAIL_HOST= </code> <br>
                     <code> MAIL_PORT= </code> <br>
