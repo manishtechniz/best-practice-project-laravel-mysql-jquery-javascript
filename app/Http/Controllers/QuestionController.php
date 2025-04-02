@@ -12,7 +12,7 @@ class QuestionController extends Controller
             if (auth()->user()->can(request()->query('permission'))) {
                 dump($this->{request()->query('question')}());
 
-                return view('question.list');   
+                return view('question.index');   
             }
 
             abort(403, 'Unauthorized action.');
@@ -34,7 +34,7 @@ class QuestionController extends Controller
             'stringCompressionAlgorithm' => $this->stringCompressionAlgorithm(),
         ];
 
-        return view('question.list', [
+        return view('question.index', [
             'allQuestions' => $allQuestions,
         ]);
     }
