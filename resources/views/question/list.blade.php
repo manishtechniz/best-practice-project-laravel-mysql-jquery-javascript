@@ -18,8 +18,8 @@
     <form action="{{route('permission')}}" method="POST">
         @csrf
         @method('PUT')
-        @foreach ([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20] as $value)
-            Laravel Question: {{$value}} <input type="checkbox" class="permission" name="permission[]" value="php:{{ $value }}" 
+        @foreach ([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20] as $value )
+            <label for="permission-{{$value}}" style="cursor: pointer"> Laravel Question: </label> {{$value}} <input type="checkbox" class="permission" id="permission-{{$value}}" name="permission[]" value="php:{{ $value }}" 
             {{auth()->user()->can('php:'.$value) ? 'checked' : '' }}
             >
         @endforeach
