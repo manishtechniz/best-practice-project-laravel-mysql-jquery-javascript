@@ -86,12 +86,12 @@ where month(attendance_date) = month(curdate()) and year(attendance_date) = year
                         [
                             'label'=> 'Using nested query',
                             'query' => 'select * from products where id in (
-select product_id from orders
-where month(curdate - interval 1 month) = month(order_date) and year(curdate - interval 1 month) = year(order_date)
-group by product_id
-order by count(*) desc
-limit 3
-                            )'
+    select product_id from orders
+    where month(curdate - interval 1 month) = month(order_date) and year(curdate - interval 1 month) = year(order_date)
+    group by product_id
+    order by count(*) desc
+    limit 3
+)'
                         ], [
                             'label'=> 'Using join',
                             'query' => 'select * from products join (
