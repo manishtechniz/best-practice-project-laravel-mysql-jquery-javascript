@@ -110,10 +110,6 @@ on orders.product_id = products.id'
         ];
     @endphp
 
-    <p style="background: brown;color:white;padding:5px">NOTE:: Please visit this
-        <a style="font-weight:bold;color:aqua" target="__blank" href="https://www.sqltutorial.org/playground/">website</a>
-        for run below queries
-    </p>
     <ul>
         @foreach ($MYSQLQuestions as $question)
             <li>
