@@ -1,38 +1,38 @@
-@if (session('success'))
-    <div style="color: white; background-color: green;padding: 4px">
-        {{ session('success') }}
-    </div>
-@endif
-
-<h1> Update permissions </h1>
-
-All Permissions <input type="checkbox" id="all-permissions"> <br> <br>
-<form action="{{ route('permission') }}" method="POST">
-    @csrf
-    @method('PUT')
-    @foreach ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20] as $value)
-        <label for="permission-{{ $value }}" style="cursor: pointer"> Laravel Question: </label>
-        {{ $value }} <input type="checkbox" class="permission" id="permission-{{ $value }}"
-            name="permission[]" value="php:{{ $value }}"
-            {{ auth()->user()->can('php:' . $value)? 'checked': '' }}>
-    @endforeach
-    <br><br>
-
-    <input type="submit" value="Update">
-</form>
-
-<h1>Question Lists
-
-    @if (!empty(request()->query('question')))
-        <a style="color: green" href="{{ route('question') }}">
-            <button>All Answer</button>
-        </a>
-    @endif
-</h1>
-
-<p style="color: green;background-color:brown;color:white;padding:4px">NOTE:: Click on the question to view the answer.</p>
-
 <details>
+    @if (session('success'))
+        <div style="color: white; background-color: green;padding: 4px">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    <h1> Update permissions </h1>
+
+    All Permissions <input type="checkbox" id="all-permissions"> <br> <br>
+    <form action="{{ route('permission') }}" method="POST">
+        @csrf
+        @method('PUT')
+        @foreach ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20] as $value)
+            <label for="permission-{{ $value }}" style="cursor: pointer"> Laravel Question: </label>
+            {{ $value }} <input type="checkbox" class="permission" id="permission-{{ $value }}"
+                name="permission[]" value="php:{{ $value }}"
+                {{ auth()->user()->can('php:' . $value)? 'checked': '' }}>
+        @endforeach
+        <br><br>
+
+        <input type="submit" value="Update">
+    </form>
+
+    <h1>Question Lists
+
+        @if (!empty(request()->query('question')))
+            <a style="color: green" href="{{ route('question') }}">
+                <button>All Answer</button>
+            </a>
+        @endif
+    </h1>
+
+    <p style="color: green;background-color:brown;color:white;padding:4px">NOTE:: Click on the question to view the answer.</p>
+
     <summary
         style="font-weight:bold;font-size:19px; background-color: green;color:white; padding: 10px; cursor: pointer;opacity:0.8">
         Laravel Questions</summary>

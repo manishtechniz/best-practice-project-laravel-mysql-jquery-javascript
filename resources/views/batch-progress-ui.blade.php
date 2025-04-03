@@ -24,17 +24,21 @@
 
         fetch('{{ route('batch_progress', $batch_id) }}')
             .then(response => response.json())
-            .then(data => {                 
+            .then(data => {   
+                let failed = data.data.failedJobs; 
+                let remainingProcessedJobs = data.data.totalJobs - failed - data.data.processedJobs; 
+
                 document.getElementById('total_jobs').innerText = data.data.totalJobs;
                 document.getElementById('pending_jobs').innerText = data.data.pendingJobs;
                 document.getElementById('proccessed_jobs').innerText = data.data.processedJobs;
-                document.getElementById('failed_jobs').innerText = data.data.failedJobs;
+                document.getElementById('failed_jobs').innerText = failed;
                 document.getElementById('progress').innerText = data.data.progress;
 
-                if (data.data.progress < 100 && data.data.status == 'processing') {
+                if (data.data.progress < 100 && remainingProcessedJobs > 0) {
                     message.innerHTML= '<span style="color:orange">Please wait ...</span>';
                     setTimeout(checkProgress, 2000);
                 } else {
+                    checkProgress();
                     message.innerHTML= '<span style="color:green">Batch processing completed!</span>';
                 }
             })

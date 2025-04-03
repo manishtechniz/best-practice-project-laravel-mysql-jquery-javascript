@@ -47,9 +47,7 @@ class UserBatchInsertController extends Controller
         }
 
         return response()->json([
-            'data' => array_merge( $batch->toArray(), [
-                'status' => $batch->finished() ? 'completed' : ($batch->failedJobs > 0 ? 'failed' : 'processing'),
-            ]),
+            'data' => $batch,
         ]);
     }
 }

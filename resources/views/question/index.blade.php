@@ -10,6 +10,7 @@
 <body>
     @include('question.laravel')
     @include('question.mysql')
+    @include('question.jquery')
 
     <script>
         const checkAll = document.getElementById('all-permissions');
