@@ -30,9 +30,9 @@ All Permissions <input type="checkbox" id="all-permissions"> <br> <br>
     @endif
 </h1>
 
-<p style="color: green;background-color:brown;color:white;padding:4px">Click on the question to view the answer.</p>
+<p style="color: green;background-color:brown;color:white;padding:4px">NOTE:: Click on the question to view the answer.</p>
 
-<details open>
+<details>
     <summary
         style="font-weight:bold;font-size:19px; background-color: green;color:white; padding: 10px; cursor: pointer;opacity:0.8">
         Laravel Questions</summary>
