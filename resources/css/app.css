@@ -1,0 +1,13 @@
+.cm-editor {
+    height: 180px; /* Set your desired height */
+  }
+
+  .badge {
+  background-color: rgb(204, 201, 201);
+  padding: 2px 8px;
+  color: black;
+  border-radius: 10px;
+  font-weight: bold;
+  opacity: .8;
+  font-size: 12px;
+}

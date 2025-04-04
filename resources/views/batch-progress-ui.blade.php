@@ -38,7 +38,6 @@
                     message.innerHTML= '<span style="color:orange">Please wait ...</span>';
                     setTimeout(checkProgress, 2000);
                 } else {
-                    checkProgress();
                     message.innerHTML= '<span style="color:green">Batch processing completed!</span>';
                 }
             })

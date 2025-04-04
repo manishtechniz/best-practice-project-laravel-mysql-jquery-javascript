@@ -16,6 +16,10 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@codemirror/lang-javascript": "^6.2.3",
+    "@codemirror/state": "^6.5.2",
+    "@codemirror/view": "^6.36.5",
+    "codemirror": "^6.0.1",
     "highlight.js": "^11.11.1",
     "jquery": "^3.7.1",
     "laravel-vite-plugin": "^1.2.0",

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UpdateUserProfileImage;
 use App\Http\Controllers\UserBatchInsertController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuestionController;
@@ -32,3 +33,7 @@ Route::group(['middleware' => ['can:php:9']], function(){
     Route::get('batch-progress/{id}', [UserBatchInsertController::class, 'batchProgress'])
     ->name('batch_progress');
 });
+
+// Update profile image
+Route::post('/update-profile-image', [UpdateUserProfileImage::class, 'update'])
+    ->name('update_profile_image');

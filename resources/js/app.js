@@ -1,11 +1,10 @@
 // Jquery
-import $ from "jquery";
+import './plugins/jquery.js';
+
+// Add code editor
+import './plugins/codemirror.js'
 
 // Highlight
-import hljs from "highlight.js";
-import "highlight.js/styles/github-dark.css"; // Use github dark theme
+import './plugins/highlight.js';
 
-// Load all highlight after page load
-$(function(){
-    hljs.highlightAll();
-})
+import './jqueryQuestionsCode.js'
