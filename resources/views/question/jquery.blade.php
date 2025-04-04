@@ -1,4 +1,4 @@
-<details open>
+<details data-summary="jquery">
     <summary
         style="margin-top:10px;font-weight:bold;font-size:19px; background-color: green;color:white; padding: 10px; cursor: pointer;opacity:0.8">
         Jquery Questions
@@ -63,7 +63,7 @@
                     return '
 
                     <p> Have to first run this code for implement this functionality</p>
-                    
+
                     <p> NOTE:: You can show hidden dropdown after run again </p>
 
                      <div style="display: flex;flex-direction: row;align-items: center;margin-top:10px">

@@ -33,7 +33,19 @@
     </script>
 
     <script type="module">
+        // open recent active question summary
+        $("details[data-summary='" + localStorage.getItem("summary") + "']").attr("open", true);
 
+        // Track questions toggles
+        $("details").on("toggle", function() {
+            if ($(this).attr("open")) {
+               localStorage.setItem("summary", $(this).attr("data-summary"));
+            } else {
+                localStorage.removeItem("summary");
+            }
+        });
+
+        // Add image prev
         $("#profile_image").change(function(){
             let file = $(this).prop('files')[0];
 
@@ -85,6 +97,7 @@
             });
         });
 
+        // Run commands
         $(".run").click(async function(){
             let questionIndex = $(this).attr('data-index');
 
@@ -111,6 +124,7 @@
             resetCustomConsoleLog(orignalLogFunctionality);
         })
 
+        // onload
         $(function(){
             // Set editors on load and after 1 second
             setTimeout(() => setJqueryQuestionsEditors(editorCodes), 1000)

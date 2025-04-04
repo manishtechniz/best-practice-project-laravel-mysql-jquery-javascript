@@ -1,4 +1,4 @@
-<details>
+<details data-summary="laravel">
     @if (session('success'))
         <div style="color: white; background-color: green;padding: 4px">
             {{ session('success') }}
